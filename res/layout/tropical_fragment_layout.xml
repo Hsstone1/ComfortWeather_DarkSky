@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mapview_contraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav_bottomNavigationView">
+
+        <ScrollView
+            android:id="@+id/tropicalScrollView_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/hurricaneOutlook_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/tropicalNestedScroll_nestedScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:id="@+id/hurricane_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/stormBasinID_linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/spinner_background"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:background="@drawable/spinner_background"
+                                android:orientation="vertical">
+
+                                <Spinner
+                                    android:id="@+id/oceanSelect_spinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginEnd="4dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:background="@drawable/spinner_background"
+                                android:orientation="vertical">
+
+                                <Spinner
+                                    android:id="@+id/stormSelect_spinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="4dp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/hurricaneData_linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:id="@+id/topBarHurricane_linearLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#4b4b4b"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/warningAlert_imageView"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:background="@android:drawable/ic_dialog_alert"
+                                    android:backgroundTint="#b90000"
+                                    android:contentDescription="@string/todo5" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/hurricaneTitle_textView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Hurricane Michael"
+                                        android:textColor="#ffae00"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/alertExpire_textView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="10/15/18 8:00PM EDT"
+                                        android:textColor="#e9e9e9" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/hurricaneDesc_linearLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+
+                                    <LinearLayout
+                                        android:id="@+id/hurricaneWind_linearLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:id="@+id/windSpeed_linearLayout"
+                                            android:layout_width="100dp"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:id="@+id/windSpeed_imageView"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_gravity="center"
+                                                app:srcCompat="@drawable/ic_wi_windy" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:text="Wind speed"
+                                                android:textAlignment="center" />
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/windSpeed_textView"
+                                            android:layout_width="100dp"
+                                            android:layout_height="match_parent"
+                                            android:text="\n155 mph"
+                                            android:textAlignment="textStart"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold" />
+
+
+                                        <LinearLayout
+                                            android:id="@+id/windGust_linearLayout"
+                                            android:layout_width="80dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="20dp"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:id="@+id/windGust_imageView"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_gravity="center"
+                                                app:srcCompat="@drawable/ic_hurricane_warning" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:text="Wind gust"
+                                                android:textAlignment="center" />
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/windGust_textView"
+                                            android:layout_width="100dp"
+                                            android:layout_height="match_parent"
+                                            android:text="\n185 mph"
+                                            android:textAlignment="textStart"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/hurricanePressure_linearLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:id="@+id/pressure_linearLayout"
+                                            android:layout_width="100dp"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:id="@+id/pressure_imageView"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_gravity="center"
+                                                app:srcCompat="@drawable/ic_wi_barometer" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:text="Pressure"
+                                                android:textAlignment="center" />
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/currentPressure_textView"
+                                            android:layout_width="100dp"
+                                            android:layout_height="match_parent"
+                                            android:text="\n930 mb"
+                                            android:textAlignment="textStart"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold" />
+
+
+                                        <LinearLayout
+                                            android:id="@+id/groundSpeed_linearLayout"
+                                            android:layout_width="80dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="20dp"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:id="@+id/groundSpeed_imageView"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_gravity="center"
+                                                app:srcCompat="@drawable/ic_gale_warning" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:text="Speed"
+                                                android:textAlignment="center" />
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/groundSpeed_textView"
+                                            android:layout_width="100dp"
+                                            android:layout_height="match_parent"
+                                            android:text="\n7 mph N"
+                                            android:textAlignment="textStart"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/hurricaneSurge_linearLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:id="@+id/stormSurge_linearLayout"
+                                            android:layout_width="100dp"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:id="@+id/stormSurge_imageView"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_gravity="center"
+                                                app:srcCompat="@drawable/ic_flood" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:text="Storm Surge"
+                                                android:textAlignment="center" />
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/stormSurge_textView"
+                                            android:layout_width="100dp"
+                                            android:layout_height="match_parent"
+                                            android:text="\n30 ft"
+                                            android:textAlignment="textStart"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold" />
+
+
+                                        <LinearLayout
+                                            android:id="@+id/catagory_linearLayout"
+                                            android:layout_width="80dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="20dp"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:id="@+id/catagory_imageView"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:layout_gravity="center"
+
+                                                app:srcCompat="@drawable/ic_hurricane" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:text="Type"
+                                                android:textAlignment="center" />
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/catagoryLevel_textView"
+                                            android:layout_width="100dp"
+                                            android:layout_height="match_parent"
+                                            android:text="\nCatagory 4"
+                                            android:textAlignment="textStart"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/hurricaneLocation_linearLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="4dp"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:id="@+id/location_linearLayout"
+                                            android:layout_width="100dp"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:id="@+id/hurricaneLocation_imageView"
+                                                android:layout_width="25dp"
+                                                android:layout_height="25dp"
+                                                android:layout_gravity="center"
+                                                android:scaleType="fitXY"
+                                                app:srcCompat="@drawable/ic_location" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:text="Location"
+                                                android:textAlignment="center" />
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/currentLocation_textView"
+                                            android:layout_width="300dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginEnd="30dp"
+                                            android:text="\n450 mi from Charleston, SC"
+                                            android:textAlignment="center"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+
+
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="30dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="20dp"
+                                        android:text="Description"
+                                        android:textAlignment="center"
+                                        android:textColor="#9e9e9e"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <android.support.v4.widget.NestedScrollView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="-4dp"
+                                            android:layout_marginEnd="-4dp"
+                                            android:background="@drawable/square_border"
+                                            android:orientation="vertical">
+
+
+                                            <TextView
+                                                android:id="@+id/hurricaneDescription_textView"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="12dp"
+                                                android:layout_marginTop="4dp"
+                                                android:layout_marginEnd="12dp"
+                                                android:layout_marginBottom="8dp"
+                                                android:text=" ...MICHAEL INTENSIFIES AS IT MAKES LANDFALL NEAR MEXICO BEACH FLORIDA... ...LIFE-THREATENING STORM SURGE...HURRICANE FORCE WINDS...AND HEAVY RAINFALL OCCURING OVER THE FLORIDA PANHANDLE...   SUMMARY OF 100 PM CDT...1800 UTC...INFOPanhandle and Big Bend, southeastGeorgia and southern South Carolina this afternoon and tonight.."
+                                                android:textSize="12sp" />
+
+
+                                        </LinearLayout>
+
+
+                                    </android.support.v4.widget.NestedScrollView>
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/floater_linearLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/floater_textView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:gravity="bottom"
+                                    android:text="Michael Infared"
+                                    android:textAlignment="center"
+                                    android:textColor="#9e9e9e"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <WebView
+                                    android:id="@+id/floater_webView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="280dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="8dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+
+                                </WebView>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:orientation="horizontal">
+
+
+                                    <ImageButton
+                                        android:id="@+id/floaterPause_imageButton"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_marginStart="4dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="#eeeeee"
+                                        android:minWidth="0dp"
+                                        android:minHeight="0dp"
+                                        android:padding="0dp"
+                                        android:src="@drawable/ic_pause" />
+
+                                    <ImageButton
+                                        android:id="@+id/floaterPlay_imageButton"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_marginStart="4dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="#eeeeee"
+                                        android:minWidth="0dp"
+                                        android:minHeight="0dp"
+                                        android:padding="0dp"
+                                        android:src="@drawable/ic_play"
+                                        android:visibility="gone" />
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="#504d4d4d" />
+
+                            <LinearLayout
+                                android:id="@+id/sevenDayRain_linearLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/sevenDayRain_textView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:gravity="bottom"
+                                    android:text="Seven Day Rain Outlook"
+                                    android:textAlignment="center"
+                                    android:textColor="#9e9e9e"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <WebView
+                                    android:id="@+id/sevenDayRainOutlookWebview_webview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="280dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="8dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+
+                                </WebView>
+
+                            </LinearLayout>
+
+
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="#504d4d4d" />
+
+                            <LinearLayout
+                                android:id="@+id/windTS_linearLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/windProb_textView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="bottom"
+                                    android:text="Michael Wind Probability"
+                                    android:textAlignment="center"
+                                    android:textColor="#9e9e9e"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <WebView
+                                    android:id="@+id/windTSProbability_webView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="350dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="8dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </WebView>
+
+                                <WebView
+                                    android:id="@+id/windHURProbability_webView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="350dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+
+                                </WebView>
+
+                                <RadioGroup
+                                    android:id="@+id/windProb_radioGroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="4dp"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintBottom_toTopOf="@id/mapview_webview"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent">
+
+
+                                    <RadioButton
+                                        android:id="@+id/windTS_radioButton"
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/radio_button_custom"
+                                        android:button="@android:color/transparent"
+                                        android:checked="true"
+                                        android:onClick="checkButton"
+                                        android:text="TS Wind Probability"
+                                        android:textAlignment="center"
+                                        android:textColor="#717171"
+                                        android:textSize="14sp" />
+
+                                    <RadioButton
+                                        android:id="@+id/windHUR_radioButton"
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/radio_button_custom"
+                                        android:button="@android:color/transparent"
+                                        android:checked="false"
+                                        android:onClick="checkButton"
+                                        android:text="HUR Wind Probability"
+                                        android:textAlignment="center"
+                                        android:textColor="#717171"
+                                        android:textSize="14sp" />
+
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="#504d4d4d" />
+
+                        <LinearLayout
+                            android:id="@+id/development5Day_linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tropicalDevelopmentOutlook_textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="bottom"
+                                android:text="Five Day Development"
+                                android:textAlignment="center"
+                                android:textColor="#9e9e9e"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <WebView
+                                android:id="@+id/development5Day_webView"
+                                android:layout_width="match_parent"
+                                android:layout_height="310dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"></WebView>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="#504d4d4d" />
+
+                        <LinearLayout
+                            android:id="@+id/visableSeaTemps_linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Ocean Temperature"
+                                android:textAlignment="center"
+                                android:textColor="#9e9e9e"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+
+                            <WebView
+                                android:id="@+id/visableSeaTempsView_webView"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:layout_marginBottom="8dp"
+                                android:visibility="visible"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                            </WebView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:text="This image is the current sea surface temperatures around the globe. The reds and oranges are warm water, whereas the blues and purples are very cold water. Generally hurricanes form when sea surface temperatures are above 79°F or 26°C. Deep water that is above this threshold provides a catalyst for very rapid intensification of hurricanes."
+                                android:textSize="12dp"
+                                android:fontFamily="@font/fira_sans_condensed_medium"/>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+                <TextView
+                    android:id="@+id/attribution_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Attribution: https://www.nhc.noaa.gov/gtwo.php"
+                    android:textAlignment="center"
+                    android:textColor="@color/common_google_signin_btn_text_light_default"
+                    android:textSize="10dp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </LinearLayout>
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>

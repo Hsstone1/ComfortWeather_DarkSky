@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="oceans_array">
+        <item>Atlantic</item>
+        <item>Central Pacific</item>
+        <item>Eastern Pacific</item>
+
+    </string-array>
+</resources>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Comfort Weather</string>
+    <string name="large_text">
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="feels_like">Feels Like:</string>
+    <string name="temperature">Temperature:</string>
+    <string name="dew_point">Dew Point:</string>
+    <string name="precip_chance">Precip Chance:</string>
+    <string name="humidity">Humidity:</string>
+    <string name="wind">Wind:</string>
+    <string name="pressure">Pressure:</string>
+    <string name="uv_index">UV Index:</string>
+    <string name="cloud_cover">Cloud Cover:</string>
+    <string name="sunrise">Sunrise:</string>
+    <string name="sunset">Sunset:</string>
+    <string name="last_updated">Last Updated:</string>
+    <string name="temp_index">Temp Index:</string>
+    <string name="description">Description:</string>
+    <string name="cityname">cityName</string>
+    <string name="tomorrow_will_be">Tomorrow will be</string>
+    <string name="todo1">TODO</string>
+    <string name="comfort_index">Comfort Index</string>
+    <string name="_35">35</string>
+    <string name="_50">50°</string>
+    <string name="divide">|</string>
+    <string name="_80">80°</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO</string>
+    <string name="todo4">TODO</string>
+    <string name="todo5">TODO</string>
+    <string name="coordinates">Coordinates</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>

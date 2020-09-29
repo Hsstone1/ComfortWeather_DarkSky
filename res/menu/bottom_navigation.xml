@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_mapview"
+        android:icon="@drawable/ic_globe"
+        android:title="Map" />
+
+
+    <item
+        android:id="@+id/nav_severe"
+        android:icon="@drawable/ic_dialog_alert"
+        android:title="Severe" />
+
+    <item
+        android:id="@+id/nav_tropical"
+        android:icon="@drawable/ic_hurricane"
+        android:title="Tropical" />
+
+</menu>

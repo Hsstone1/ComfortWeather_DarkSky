@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:id="@+id/severeScrollView_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="#4b4b4b"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/severeOutlook_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginEnd="80dp"
+                        android:gravity="bottom"
+                        android:text="Severe Weather Outlook"
+                        android:textAlignment="center"
+                        android:textColor="#FF9e9e9e"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/warnings_button"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="-85dp"
+                        android:background="@drawable/circleborder"
+                        android:backgroundTint="@color/quantum_googred"
+                        android:gravity="center"
+                        android:text="WARNINGS"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <WebView
+                        android:id="@+id/severeWeather_webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="280dp"
+                        android:layout_marginBottom="8dp"
+                        android:visibility="visible" />
+
+
+                    <WebView
+                        android:id="@+id/severeWind_webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="280dp"
+                        android:layout_marginBottom="8dp"
+                        android:visibility="gone" />
+
+
+                    <WebView
+                        android:id="@+id/severeHail_webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="280dp"
+                        android:layout_marginBottom="8dp"
+                        android:visibility="gone" />
+
+
+                    <WebView
+                        android:id="@+id/severeTornadoes_webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="280dp"
+                        android:layout_marginBottom="8dp"
+                        android:visibility="gone" />
+
+
+                    <RadioGroup
+                        android:id="@+id/severeOutlook_radioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:orientation="horizontal">
+
+
+                        <RadioButton
+                            android:id="@+id/severeWeather_radioButton"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_button_custom"
+                            android:button="@android:color/transparent"
+                            android:checked="true"
+                            android:onClick="checkButton"
+                            android:text="Severe"
+                            android:textAlignment="center"
+                            android:textColor="#717171"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/severeWind_radioButton"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_button_custom"
+                            android:button="@android:color/transparent"
+                            android:checked="false"
+                            android:onClick="checkButton"
+                            android:text="Wind"
+                            android:textAlignment="center"
+                            android:textColor="#717171"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/severeHail_radioButton"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_button_custom"
+                            android:button="@android:color/transparent"
+                            android:checked="false"
+                            android:onClick="checkButton"
+                            android:text="Hail"
+                            android:textAlignment="center"
+                            android:textColor="#717171"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/severeTornadoes_radioButton"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_button_custom"
+                            android:button="@android:color/transparent"
+                            android:checked="false"
+                            android:onClick="checkButton"
+                            android:text="Tornado"
+                            android:textAlignment="center"
+                            android:textColor="#717171"
+                            android:textSize="14sp" />
+
+                    </RadioGroup>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="#504d4d4d" />
+
+
+                    <android.support.v4.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/expandable_linearLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/expandableTitleText_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:clickable="true"
+                                    android:fontFamily="@font/fira_sans_condensed_medium"
+                                    android:text="More Details"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/expandableImage_imageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    app:srcCompat="@drawable/ic_expand" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/severeDetails_textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/fira_sans_condensed_medium"
+                                android:maxLines="2"
+                                android:text="The TSTM area implies a 10% or higher probability of thunderstorms in the next 24 hours. These storms are not likely to contain severe elements.\n\n A 1-MRGL-dark green risk area implies scattered severe storms, which likely are not very intense or organized.\n\n 2-SLGT-yellow risk area implies more organized, and more numerous severe thunderstorms with varying intensity.\n\n A 3-ENH-orange risk area implies a greater concentration of organized severe thunderstorms with varying levels of intensity.\n\n A 4-MDT-red risk indicates potential for widespread severe weather with several tornadoes and/or numerous severe thunderstorms, some of which may be intense. Damaging hail and dangerous winds are possible.\n\n A 5-HIGH-magenta risk area suggests a severe weather outbreak is expected from either numerous intense and long-track tornadoes, or a long-lived system with hurricane-force wind gusts producing widespread damage. Large damaging hail is possible."
+                                android:textSize="10sp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                />
+
+
+                        </LinearLayout>
+                    </android.support.v4.widget.NestedScrollView>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/severeAttribution_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Attribution: https://www.spc.noaa.gov/products/outlook/"
+            android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_light_default"
+            android:textSize="10dp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>
