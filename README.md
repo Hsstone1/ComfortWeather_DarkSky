@@ -7,8 +7,9 @@ Comfort Weather is a weather application that derives its data from the Dark Sky
 Comfort Weather has many features standard to weather apps, but many that set it appart. Namely the creation of a 'Comfort Index' which takes in a multitude of meteorlogical factors to create a value between 0 and 100, inclusive. The higher the number, the more plesant it feels outside. 
 ![CW_TopMain](https://user-images.githubusercontent.com/67842011/94703390-c389a200-030c-11eb-9043-abf36a418868.jpg)
 
-There is also the option for the user to view the weather forecast in the means of a graph. Comfort Weather allows the user to view many different meterological factors, all displayed on one graph. The user has the option to choose which factors to display.
+# Advanced Forecasting
 ![CW_GraphMain](https://user-images.githubusercontent.com/67842011/94703391-c4223880-030c-11eb-88d1-81ca95a31060.jpg)
+There is also the option for the user to view the weather forecast in the means of a graph. Comfort Weather allows the user to view many different meterological factors, all displayed on one graph. The user has the option to choose which factors to display.
 
 # Unlimited Locations
 Comfort Weather uses a SQL lite database to store previously searched addresses with the ability to favorite, and delete any address they please. There is also a cooldown time of 5 minutes between refreshes to limit API calls as it is not a free service.
